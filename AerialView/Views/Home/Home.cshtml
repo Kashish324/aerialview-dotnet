@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* @model AerialView.Models.SidebarMenuModel *@
+
+<!-- _HomeSection.cshtml -->
+<section class="home-section">
+    <div class="home-content">
+        <div class="headerContent">
+            <i class="ri-arrow-right-double-line bx bx-menu"></i>
+            <span class="text">AerialView Reporting Software </span>
+        </div>
+        <div class='tableContent'>
+            @if (ViewData["SubChildName"] != null)
+            {
+                <h1 class='tableHeading'> @ViewData["SubChildName"] </h1>
+                @ViewData["ConnString"]
+                @Model.SidebarMenu.ConnString
+            } else
+            {
+            <h1 class='tableHeading'> Home Page </h1>
+                <div>Please select an item </div>
+            }
+        </div>
+
+
+        @if (ViewData["SubChildName"] != null)
+        {
+            <div>
+                @* <partial name="DataGrid" /> *@
+                <partial name="~/Views/DataGrid/DataGridOverview.cshtml" />
+                @* @await Html.PartialAsync("~/Views/DataGrid/DataGridOverview.cshtml", ViewData["RptId"]) *@
+            </div>
+           
+        }
+        
+    </div>
+</section>
+
+

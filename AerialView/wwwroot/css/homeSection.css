@@ -1,0 +1,111 @@
+﻿.home-section {
+    position: relative;
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    transition: all 0.5s ease;
+    background-color: #E4E9F7;
+    z-index: 999;
+    padding: 0 20px;
+    min-height: 100vh;
+}
+
+
+.sidebar.close ~ .home-section {
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 100;
+}
+
+.home-section .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.home-content .headerContent {
+    position: sticky;
+    top: 0;
+    padding: 1vh 0;
+    width: auto;
+    display: flex;
+    align-items: center;
+    background-color: #11101d;
+    z-index: 99;
+    margin: 0 -20px;
+}
+
+    .home-content .headerContent .text {
+        font-size: 1.3em;
+        font-weight: 500;
+        white-space: nowrap;
+        letter-spacing: 1px;
+        word-spacing: 1px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        color: #fff;
+    }
+
+.home-section .home-content .bx-menu {
+    font-size: 25px;
+    color: #fff;
+    position: relative;
+    text-align: start;
+    margin-right: 8px;
+    cursor: pointer;
+    opacity: .6;
+    height: fit-content;
+    transition: cubic-bezier(0.19, 1, 0.22, 1) .2s;
+}
+
+.home-section .bx-menu:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+
+.tableContent {
+    position: sticky;
+    top: 5%;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    background-color: #E4E9F7;
+    z-index: 9;
+}
+
+
+.tableHeading {
+    position: relative;
+    width: fit-content;
+    margin: 2vh 0;
+    color: #11101d;
+    font-size: 1.4em;
+    font-weight: bolder;
+}
+
+    .tableHeading::before {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: #1d1b31;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+
+    .tableHeading:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
